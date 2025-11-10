@@ -33,7 +33,7 @@ public class scriptplayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(laserRed, this.transform.position, transform.rotation);
+            Instantiate(laserRed, this.transform.position, this.transform.rotation);
         }
 
         if (Input.GetKeyDown(KeyCode.F))
