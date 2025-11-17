@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class scriptplayer : MonoBehaviour
 {
-    [SerializeField] private float playerspeed = 3;
+    [SerializeField] private float playerspeed = 5;
     public float horizontalMovement;
 
     public GameObject laserRed;
@@ -47,5 +47,15 @@ public class scriptplayer : MonoBehaviour
 
 
 
+    }
+    public void TakeDamage()
+    {
+        playerHealth--;
+        Debug.Log(" player health: " +  playerHealth);
+
+        if (playerHealth < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

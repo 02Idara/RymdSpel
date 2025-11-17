@@ -3,6 +3,7 @@ using UnityEngine;
 public class enemy : MonoBehaviour
 {
     public float speed;
+    public int enemyHealth = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,7 +23,24 @@ public class enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+            collision.transform.GetComponent<scriptplayer>().TakeDamage();
+            Debug.Log("Hit: " + collision);
+        }
+        /*if (collision.tag == "Laser")
+        {
+            Destroy(gameObject);
+        }*/
+    }
+    public void TakeDamage()
+    {
+        enemyHealth--;
+        Debug.Log("enemyHealth: " +  enemyHealth);
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 } 
 

@@ -19,7 +19,19 @@ public class bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+      
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            collision.GetComponent<enemy>().TakeDamage();
+            Debug.Log("Hit" + collision);
+        }
+        if (collision.tag == "Laser")
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
