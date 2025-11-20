@@ -5,11 +5,12 @@ using System.Collections.Generic;
 public class enemyspawner : MonoBehaviour
 {
     public GameObject Enemy;
-    private int enemyCounter;
+    public int enemyCounter;
     private GameObject Player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         StartCoroutine(EnemySpawner());
     }
 
