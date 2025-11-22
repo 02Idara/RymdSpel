@@ -6,7 +6,7 @@ public class enemyspawner : MonoBehaviour
 {
     public GameObject Enemy;
     public int enemyCounter;
-    private GameObject Player;
+    public GameObject Player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

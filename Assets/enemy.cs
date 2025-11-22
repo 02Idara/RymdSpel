@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    public GameObject hålltext;
-    public float speed;
+    private GameObject hålltext;
+    public float speed = 3f;
     public int enemyHealth = 1;
-    public GameObject spawner;
+    private GameObject spawner;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         spawner = GameObject.Find("spawnScript");
 
-        hålltext = GameObject.Find("bild");
+        hålltext = GameObject.Find("score");
     }
 
     // Update is called once per frame
@@ -32,12 +32,9 @@ public class enemy : MonoBehaviour
             collision.transform.GetComponent<scriptplayer>().TakeDamage();
             Debug.Log("Hit: " + collision);
         }
-        /*if (collision.tag == "Laser")
-        {
-            Destroy(gameObject);
-        }*/
     }
-    public void TakeDamage()
+}    
+    /*public void TakeDamage()
     {
 
         enemyHealth--;
@@ -49,6 +46,4 @@ public class enemy : MonoBehaviour
             spawner.GetComponent<enemyspawner>().enemyCounter -= 1;
             Destroy(gameObject);
         }
-    }
-} 
-
+    }*/

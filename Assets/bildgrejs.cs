@@ -15,6 +15,6 @@ public class bildgrejs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreTextBox.text = "Score is: " + Score;
+        scoreTextBox.text = "Score: " + Score;
     }
 }
